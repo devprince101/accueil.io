@@ -1,0 +1,318 @@
+/*********** importing google fonts ********************/
+
+@import url('https://fonts.googleapis.com/css2?family=Langar&family=Oswald:wght@600&family=Roboto:ital,wght@1,100&display=swap');
+
+/************ default style for all my tags *************/
+
+
+:root {
+    --small : 'Roboto', sans-serif;
+    --medium :  'Langar', cursive;
+    --petit: 1.7em;
+    --primary : rgba(0,0,255,1);
+    --lblue : rgba(0, 0, 156,.2);
+    --tblue: #000085;
+    --dblue : #6838B7;
+    --success : rgba(0,255,0,1);
+    --dgreen :  #419610;
+    --cblack : rgba(0,0,0,.4);
+    --first : #fff;
+    --second : #000;
+    --light : rgba(225,225,225,.4);
+    --danger : rgba(255,0,0,1);
+    --bigfont : 4em;
+    --medfont : 2em;
+    --smfont :1.5em;
+    --sm : 16px;
+    --sm-med : 20px;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Oswald', sans-serif;
+    -webkit-margin:0;
+    -moz-margin:0;
+    -o-margin:0;
+    margin:0;
+}
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing:border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+/************ Header tags ********************************/
+
+a:hover {
+    color : var(--first);
+    text-decoration: underline ;
+    background-color: var(--tblue);
+}
+header {
+    width: 100vw;
+    padding:0;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    background-color: var(--first);
+}
+.top_section {
+    width:90%;
+    margin:0 auto;
+    position:relative;
+    height:80px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 .5em;
+    background-color: var(--first);
+}
+.left_side {
+    position: relative;
+    height: 100%;
+    margin:0;
+    padding:0;
+}
+.logo {
+    color:var(--first);
+    height: 100%;
+    position: relative;
+    top: 0;
+    display:flex;
+    align-items: center;
+}
+.logo img {
+    height:75%;
+    object-fit: cover;
+    position: relative;
+    padding:0;
+    margin: 0;
+    cursor: pointer;
+    transition:  height 250ms ease-in-out;
+}
+.logo img:hover {
+    height: 100%;
+}
+.right_side {
+    height:100%;
+    display: flex;
+    align-items: center;
+    margin:0;
+    background-color: transparent;
+} 
+#menu_icon {
+    padding: 1em .5em;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: none;
+}
+.hamburger {
+    position:relative;
+}
+.hamburger,
+.hamburger:before,
+.hamburger:after {
+    content:'';
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: var(--tblue);
+    transition: background 250ms ease-in-out;
+}
+.hamburger:before {
+    position: absolute;
+    top: 7px;
+}
+.hamburger:after {
+    position: absolute;
+    top: -7px;
+}
+.langue {
+    margin: 0 .5em;
+    padding:0;
+    position: relative;
+}
+.lan {
+    margin: 0;
+    padding: 0 .3em;
+    position: relative;
+}
+.lan:hover {
+    background-color: var(--first);
+}
+.flags {
+    margin:0;
+    padding:0;
+}
+#profile{
+    background-color: transparent;
+    border:none;
+    outline: none;
+    position: relative;
+    padding: 0 .5em;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.profile {
+    background-color: transparent;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+nav {
+    width: 100vw;
+    height: 60px;
+    background-color: var(--first);
+    text-align: right;
+    line-height: 50px;
+    position: relative;
+    margin: 0;
+    padding-right: 4em;
+}
+.nav_items {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin:0 auto;
+    padding-right: 1em;
+    justify-content: right;
+    float: right;
+    background-color: var(--first);
+    position: relative;
+    right: 0;
+}
+.nav_item {
+    margin: 0 ;
+    padding:0;
+    position: relative;
+}
+.nav_link_home{
+    color:var(--first);
+    background-color: var(--tblue);
+    font-size:var(--petit);
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0 1em;
+    height: 100%;
+    display: block;
+    transition: background 250ms ease-in-out;
+
+}
+.nav_link {
+    color:var(--tblue);
+    font-size:var(--petit);
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0 1em;
+    height: 100%;
+    display: block;
+    transition: background 250ms ease-in-out;
+}
+/*********** navOpen *************************************/
+
+.navOpen .logo {
+    z-index: 99;
+    position: relative;
+}
+.navOpen #menu_icon {
+    z-index:99;
+    position: relative;
+}
+.navOpen .langue {
+    display: none;
+}
+.navOpen #profile {
+    display: none;
+}
+.navOpen .hamburger {
+    background-color: transparent;
+}
+.navOpen .hamburger:before {
+    background-color: var(--danger);
+    top: 0;
+    transform: rotate(45deg);
+}
+.navOpen .hamburger:after {
+    background-color: var(--danger);
+    top: 0;
+    transform: rotate(-45deg);
+}
+.navOpen nav {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--first);
+}
+.navOpen .nav_items {
+    display: block;
+    position: absolute;
+    width:100%;
+    height: 100%;
+    text-align: center;
+}
+
+
+/************ jumbotron **********************************/
+
+#jumbotron {
+    width:100vw;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--lblue);
+    position: relative;
+}
+.bighead {
+    position: relative;
+}
+
+/************* Hain tags *********************************/
+
+
+
+/************* Footer tags ********************************/
+
+
+
+/************ Responsiveness ******************************/
+
+@media (max-width:920px) {
+    #menu_icon {
+        display: block;
+        cursor:pointer;
+    }
+    .nav_items {
+        display:none;
+    }
+}
+/******************* small screens ************************/
+
+@media (max-width:360px) {
+    .top_section {
+        width:100%;
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1em 0;
+    }
+    .right_side {
+        margin-top: 1em;
+    }
+    #jumbotron {
+        width:100vw;
+        height: auto;
+        position: relative;
+        top:150px;
+        text-align: center;
+    }
+    
+
+}
